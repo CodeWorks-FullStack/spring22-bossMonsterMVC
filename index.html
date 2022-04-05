@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>BAWS Monstahhh</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+      <a class="navbar-brand ms-3" href="#">
+
+        <span class="ms-2">BAWS Monstahhh</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- NOTE make sure to delete or comment out the <div id="app"></div> -->
+
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8" id="boss">
+          <!-- BAWS will go here -->
+        </div>
+        <div class="col-md-4">
+          <!-- inputs must be wrapped in a form to capture the event -->
+          <form class="my-2" onsubmit="app.gameController.createBoss()">
+            <div class="form-group pb-2">
+              <!-- the name attribute is how we will pull data off of this input field in the controller -->
+              <input type="text" placeholder="Entre Name..." class="form-control" name="name" required minlength="1"
+                maxlength="25">
+            </div>
+            <div class="form-group pb-2">
+              <!-- setting required and min/max length will not allow the user to supply null/empty fields -->
+              <input type="text" placeholder="Entre Img..." class="form-control" name="img" required minlength="1"
+                maxlength="25">
+            </div>
+            <div>
+              <button class="btn btn-success">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row" id="heroes">
+        <!-- Heroes will be injected here -->
+
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-light">
+    <div class="text-center no-select">
+      <p><small>Made with 💖 by Codeworks</small></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
