@@ -17,6 +17,7 @@ export class GameController {
   constructor() {
     console.log('hello from the game controller');
     // Proxystate.on is our event listener - first argument is the data we are watching in the ProxyState, second argument is the thing we want to run when the collection we 'subscribed' to changes
+    // If you get an error that says 'Unable to register listener for ____", the first argument in the ProxyState.on doesn't match anything in ProxyState 
     ProxyState.on('bosses', _drawBoss)
     ProxyState.on('heroes', _drawHeroes)
     // NOTE if we want something to happen immediately when this controller is loaded, put it here!

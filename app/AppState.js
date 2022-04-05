@@ -2,7 +2,7 @@ import { Hero } from "./Models/Hero.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
-// Extends means INHERITANCE
+// Extends means INHERITANCE - Basically Appstate is a class that includes everything in EventEmitter AND whatever else we put inside of the AppState class
 class AppState extends EventEmitter {
 
   money = 0
@@ -14,7 +14,7 @@ class AppState extends EventEmitter {
 }
 
 // This is a proxy object - so, when things change inside of this proxy object, lets tell people that are 'subscribed' that something changed. Also known as the observer pattern.
-// ProxyState is a WRAPPER for our Appstate and is the "bouncer" or Zach 
+// ProxyState is a WRAPPER for our Appstate and is the "bouncer" or Zach. We don't allow direct manipulation of the AppState - we have to go through the ProxyState proxy object and it will perform the changes for us.
 export const ProxyState = new Proxy(new AppState(), {
   get(target, prop) {
     isValidProp(target, prop)

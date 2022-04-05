@@ -22,6 +22,7 @@ class GameService {
     if (foundBoss.health <= 0) {
       Pop.toast(`${foundBoss.name} has been slain!!! Much rejoicing`)
       let bossIndex = ProxyState.bosses.findIndex(b => b.name == bossName)
+      // Removing the slain boss from the bosses array
       ProxyState.bosses.splice(bossIndex, 1)
       clearInterval(intervalId)
     }
